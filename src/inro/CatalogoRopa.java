@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 package inro;
+import inro.modelos.Ropa;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,6 +42,7 @@ public class CatalogoRopa extends javax.swing.JInternalFrame {
         jBEliminar = new javax.swing.JButton();
         jBSalir = new javax.swing.JButton();
 
+        setTitle("Catálogo de Ropa");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }

@@ -4,6 +4,7 @@
  */
 package inro;
 
+import inro.modelos.Ropa;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
