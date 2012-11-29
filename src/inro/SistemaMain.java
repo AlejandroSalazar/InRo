@@ -29,8 +29,9 @@ public class SistemaMain extends javax.swing.JFrame {
         jDPContenedorEscritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMCatalogos = new javax.swing.JMenu();
+        jMIRopa = new javax.swing.JMenuItem();
+        jMIUsuarios = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -42,12 +43,25 @@ public class SistemaMain extends javax.swing.JFrame {
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMCatalogos.setText("Catálogos");
 
-        jMenuItem1.setText("jMenuItem1");
-        jMenu2.add(jMenuItem1);
+        jMIRopa.setText("Ropa");
+        jMIRopa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIRopaActionPerformed(evt);
+            }
+        });
+        jMCatalogos.add(jMIRopa);
 
-        jMenuBar1.add(jMenu2);
+        jMIUsuarios.setText("Usuarios");
+        jMIUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIUsuariosActionPerformed(evt);
+            }
+        });
+        jMCatalogos.add(jMIUsuarios);
+
+        jMenuBar1.add(jMCatalogos);
 
         setJMenuBar(jMenuBar1);
 
@@ -72,10 +86,20 @@ public class SistemaMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        
+    }//GEN-LAST:event_formWindowOpened
+
+    private void jMIRopaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIRopaActionPerformed
         CatalogoRopa c = new CatalogoRopa();
         jDPContenedorEscritorio.add(c);
         c.show();
-    }//GEN-LAST:event_formWindowOpened
+    }//GEN-LAST:event_jMIRopaActionPerformed
+
+    private void jMIUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIUsuariosActionPerformed
+        CatalogoUsuarios c = new CatalogoUsuarios();
+        jDPContenedorEscritorio.add(c);
+        c.show();
+    }//GEN-LAST:event_jMIUsuariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,9 +144,10 @@ public class SistemaMain extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDPContenedorEscritorio;
+    private javax.swing.JMenu jMCatalogos;
+    private javax.swing.JMenuItem jMIRopa;
+    private javax.swing.JMenuItem jMIUsuarios;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }
