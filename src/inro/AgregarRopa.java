@@ -152,7 +152,7 @@ public class AgregarRopa extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCancelarActionPerformed
-        setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_jBCancelarActionPerformed
 
     private void jBAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAceptarActionPerformed
@@ -209,7 +209,7 @@ public class AgregarRopa extends javax.swing.JDialog {
         }
         
         ropa = new Ropa(nombre, stockMin, precio, cantidad, descripcion);
-        setVisible(false);
+        dispose();
     }//GEN-LAST:event_jBAceptarActionPerformed
 
     public Ropa getRopa() {

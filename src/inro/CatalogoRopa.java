@@ -7,6 +7,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 
 /**
@@ -66,8 +67,14 @@ public class CatalogoRopa extends javax.swing.JInternalFrame {
             }
         });
 
-        jTblRegistros.setModel(new javax.swing.table.DefaultTableModel());
-        jTblRegistros.setName("");
+        jTblRegistros.setModel(new javax.swing.table.DefaultTableModel()
+            {public boolean isCellEditable(int row, int column){return false;}});
+        jTblRegistros.setName(""); // NOI18N
+        jTblRegistros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTblRegistrosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTblRegistros);
 
         jToolBar1.setRollover(true);
@@ -132,24 +139,45 @@ public class CatalogoRopa extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTFBuscarActionPerformed
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+        String [] columns = {"Código", "Nombre", "Cantidad"};
+        DefaultTableModel m = (DefaultTableModel) jTblRegistros.getModel();
+        m.setColumnIdentifiers(columns);
+        m.setRowCount(3);
         
-       
     }//GEN-LAST:event_formInternalFrameOpened
 
     private void jBAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarActionPerformed
         AgregarRopa agrega = new AgregarRopa(null, true);
-        BaseDeDatos bd = BaseDeDatos.getInstance();
+        //BaseDeDatos bd = BaseDeDatos.getInstance();
         Ropa r = agrega.getRopa();
         
+        if(r != null) {
+            JOptionPane.showMessageDialog(this, "Registro aregado satisfactoriamente", 
+                "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jBAgregarActionPerformed
 
     private void jBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarActionPerformed
-        // TODO add your handling code here:
+        int r = JOptionPane.showConfirmDialog(this,
+            "¿Seguro que desea eliminar el registro?", "Confirmación",
+            JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+        
+        if(r == JOptionPane.YES_OPTION) {
+            JOptionPane.showMessageDialog(this, "Registro eliminado", 
+                    "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jBEliminarActionPerformed
 
     private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_jBSalirActionPerformed
+
+    private void jTblRegistrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTblRegistrosMouseClicked
+        if(evt.getClickCount() == 2) {
+            AgregarRopa agrega = new AgregarRopa(null, true);
+            agrega.getRopa();
+        }
+    }//GEN-LAST:event_jTblRegistrosMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAgregar;
