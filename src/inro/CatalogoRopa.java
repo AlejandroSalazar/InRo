@@ -149,7 +149,7 @@ public class CatalogoRopa extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_formInternalFrameOpened
 
     private void jBAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarActionPerformed
-        AgregarRopa agrega = new AgregarRopa(null, true);
+        DialogoRopa agrega = new DialogoRopa(null, true);
         //BaseDeDatos bd = BaseDeDatos.getInstance();
         Ropa r = agrega.getRopa();
         
@@ -176,7 +176,7 @@ public class CatalogoRopa extends javax.swing.JInternalFrame {
 
     private void jTblRegistrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTblRegistrosMouseClicked
         if(evt.getClickCount() == 2) {
-            AgregarRopa agrega = new AgregarRopa(null, true);
+            DialogoRopa agrega = new DialogoRopa(null, true);
             agrega.getRopa();
         }
     }//GEN-LAST:event_jTblRegistrosMouseClicked
