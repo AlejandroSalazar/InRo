@@ -71,6 +71,28 @@
             </MenuItem>
           </SubComponents>
         </Menu>
+        <Menu class="javax.swing.JMenu" name="jMReportes">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Reportes"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMIReporteExistencia">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Reporte de Existencia"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMIReporteRopaPendiente">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Reporte de Ropa Pendiente"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMIReporteSurtimiento">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Reporte de Surtimiento"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
       </SubComponents>
     </Menu>
   </NonVisualComponents>

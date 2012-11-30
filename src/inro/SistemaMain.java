@@ -37,6 +37,10 @@ public class SistemaMain extends javax.swing.JFrame {
         jMSurtimentos = new javax.swing.JMenu();
         jMIInventario = new javax.swing.JMenuItem();
         jMISurtirDeparamento = new javax.swing.JMenuItem();
+        jMReportes = new javax.swing.JMenu();
+        jMIReporteExistencia = new javax.swing.JMenuItem();
+        jMIReporteRopaPendiente = new javax.swing.JMenuItem();
+        jMIReporteSurtimiento = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -103,6 +107,19 @@ public class SistemaMain extends javax.swing.JFrame {
         jMSurtimentos.add(jMISurtirDeparamento);
 
         jMenuBar1.add(jMSurtimentos);
+
+        jMReportes.setText("Reportes");
+
+        jMIReporteExistencia.setText("Reporte de Existencia");
+        jMReportes.add(jMIReporteExistencia);
+
+        jMIReporteRopaPendiente.setText("Reporte de Ropa Pendiente");
+        jMReportes.add(jMIReporteRopaPendiente);
+
+        jMIReporteSurtimiento.setText("Reporte de Surtimiento");
+        jMReportes.add(jMIReporteSurtimiento);
+
+        jMenuBar1.add(jMReportes);
 
         setJMenuBar(jMenuBar1);
 
@@ -213,9 +230,13 @@ public class SistemaMain extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMIDepartamentos;
     private javax.swing.JMenuItem jMIInventario;
     private javax.swing.JMenuItem jMIPersonalHospital;
+    private javax.swing.JMenuItem jMIReporteExistencia;
+    private javax.swing.JMenuItem jMIReporteRopaPendiente;
+    private javax.swing.JMenuItem jMIReporteSurtimiento;
     private javax.swing.JMenuItem jMIRopa;
     private javax.swing.JMenuItem jMISurtirDeparamento;
     private javax.swing.JMenuItem jMIUsuarios;
+    private javax.swing.JMenu jMReportes;
     private javax.swing.JMenu jMSurtimentos;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
