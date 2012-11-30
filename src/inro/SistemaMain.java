@@ -38,6 +38,7 @@ public class SistemaMain extends javax.swing.JFrame {
         jMIInventario = new javax.swing.JMenuItem();
         jMISurtirDeparamento = new javax.swing.JMenuItem();
         jMIRecoleccion = new javax.swing.JMenuItem();
+        jMINotasRemision = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -111,6 +112,14 @@ public class SistemaMain extends javax.swing.JFrame {
         });
         jMSurtimentos.add(jMIRecoleccion);
 
+        jMINotasRemision.setText("Notas de remisión");
+        jMINotasRemision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMINotasRemisionActionPerformed(evt);
+            }
+        });
+        jMSurtimentos.add(jMINotasRemision);
+
         jMenuBar1.add(jMSurtimentos);
 
         setJMenuBar(jMenuBar1);
@@ -181,6 +190,12 @@ public class SistemaMain extends javax.swing.JFrame {
         r.show();
     }//GEN-LAST:event_jMIRecoleccionActionPerformed
 
+    private void jMINotasRemisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMINotasRemisionActionPerformed
+        NotaRemision r = new NotaRemision();
+        jDPContenedorEscritorio.add(r);
+        r.show();
+    }//GEN-LAST:event_jMINotasRemisionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -227,6 +242,7 @@ public class SistemaMain extends javax.swing.JFrame {
     private javax.swing.JMenu jMCatalogos;
     private javax.swing.JMenuItem jMIDepartamentos;
     private javax.swing.JMenuItem jMIInventario;
+    private javax.swing.JMenuItem jMINotasRemision;
     private javax.swing.JMenuItem jMIPersonalHospital;
     private javax.swing.JMenuItem jMIRecoleccion;
     private javax.swing.JMenuItem jMIRopa;
