@@ -33,6 +33,8 @@ public class SistemaMain extends javax.swing.JFrame {
         jMIRopa = new javax.swing.JMenuItem();
         jMIPersonalHospital = new javax.swing.JMenuItem();
         jMIUsuarios = new javax.swing.JMenuItem();
+        jMSurtimentos = new javax.swing.JMenu();
+        jMISurtirDeparamento = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -71,6 +73,18 @@ public class SistemaMain extends javax.swing.JFrame {
         jMCatalogos.add(jMIUsuarios);
 
         jMenuBar1.add(jMCatalogos);
+
+        jMSurtimentos.setText("Surtimentos");
+
+        jMISurtirDeparamento.setText("Surtir deparamento");
+        jMISurtirDeparamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMISurtirDeparamentoActionPerformed(evt);
+            }
+        });
+        jMSurtimentos.add(jMISurtirDeparamento);
+
+        jMenuBar1.add(jMSurtimentos);
 
         setJMenuBar(jMenuBar1);
 
@@ -115,6 +129,12 @@ public class SistemaMain extends javax.swing.JFrame {
         jDPContenedorEscritorio.add(c);
         c.show();
     }//GEN-LAST:event_jMIPersonalHospitalActionPerformed
+
+    private void jMISurtirDeparamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISurtirDeparamentoActionPerformed
+        SurtirDeparamento s = new SurtirDeparamento();
+        jDPContenedorEscritorio.add(s);
+        s.show();
+    }//GEN-LAST:event_jMISurtirDeparamentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,7 +182,9 @@ public class SistemaMain extends javax.swing.JFrame {
     private javax.swing.JMenu jMCatalogos;
     private javax.swing.JMenuItem jMIPersonalHospital;
     private javax.swing.JMenuItem jMIRopa;
+    private javax.swing.JMenuItem jMISurtirDeparamento;
     private javax.swing.JMenuItem jMIUsuarios;
+    private javax.swing.JMenu jMSurtimentos;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
