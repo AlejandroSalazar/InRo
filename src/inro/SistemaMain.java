@@ -37,6 +37,7 @@ public class SistemaMain extends javax.swing.JFrame {
         jMSurtimentos = new javax.swing.JMenu();
         jMIInventario = new javax.swing.JMenuItem();
         jMISurtirDeparamento = new javax.swing.JMenuItem();
+        jMIRecoleccion = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -102,6 +103,14 @@ public class SistemaMain extends javax.swing.JFrame {
         });
         jMSurtimentos.add(jMISurtirDeparamento);
 
+        jMIRecoleccion.setText("Recolección de ropa sucia");
+        jMIRecoleccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIRecoleccionActionPerformed(evt);
+            }
+        });
+        jMSurtimentos.add(jMIRecoleccion);
+
         jMenuBar1.add(jMSurtimentos);
 
         setJMenuBar(jMenuBar1);
@@ -166,6 +175,12 @@ public class SistemaMain extends javax.swing.JFrame {
         c.show();
     }//GEN-LAST:event_jMIDepartamentosActionPerformed
 
+    private void jMIRecoleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIRecoleccionActionPerformed
+        RecolectarRopa r = new RecolectarRopa();
+        jDPContenedorEscritorio.add(r);
+        r.show();
+    }//GEN-LAST:event_jMIRecoleccionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -213,6 +228,7 @@ public class SistemaMain extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMIDepartamentos;
     private javax.swing.JMenuItem jMIInventario;
     private javax.swing.JMenuItem jMIPersonalHospital;
+    private javax.swing.JMenuItem jMIRecoleccion;
     private javax.swing.JMenuItem jMIRopa;
     private javax.swing.JMenuItem jMISurtirDeparamento;
     private javax.swing.JMenuItem jMIUsuarios;
