@@ -4,12 +4,17 @@
  */
 package inro;
 
+import inro.modelos.Departamento;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Alejandro
  */
 public class DialogoDepartamento extends javax.swing.JDialog {
 
+    private Departamento departamento;
+    
     /**
      * Creates new form AgregarDepartamento
      */
@@ -41,8 +46,18 @@ public class DialogoDepartamento extends javax.swing.JDialog {
         jLNombre.setText("Nombre:");
 
         jBCancelar.setText("Cancelar");
+        jBCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCancelarActionPerformed(evt);
+            }
+        });
 
         jBAceptar.setText("Aceptar");
+        jBAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAceptarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,6 +102,27 @@ public class DialogoDepartamento extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCancelarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jBCancelarActionPerformed
+
+    private void jBAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAceptarActionPerformed
+        String nombre = jTNombre.getText();
+        
+        if(nombre.length() < 3) {
+            JOptionPane.showMessageDialog(this, "El nombre debe contener al menos 3 caracteres");
+            return;
+        }
+        
+        departamento = new Departamento(nombre);
+        this.dispose();
+    }//GEN-LAST:event_jBAceptarActionPerformed
+
+    public Departamento getDepartamento() {
+        setVisible(true);
+        return departamento;
+    }
+    
     /**
      * @param args the command line arguments
      */

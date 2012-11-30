@@ -4,6 +4,7 @@
  */
 package inro;
 
+import inro.modelos.Inventario;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,6 +13,8 @@ import javax.swing.JOptionPane;
  */
 public class DialogoInventario extends javax.swing.JDialog {
 
+    private Inventario inventario;
+    
     /**
      * Creates new form DialogoInventario
      */
@@ -126,9 +129,46 @@ public class DialogoInventario extends javax.swing.JDialog {
     }//GEN-LAST:event_jBCancelarActionPerformed
 
     private void jBAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAceptarActionPerformed
-
+        int claveRopa;
+        String nombre;
+        String descripcion;
+        int cantidad;
+        
+        try{
+            claveRopa = Integer.parseInt(jTFClaveRopa.getText());
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(this, "La clave de ropa debe ser un numero",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        nombre = jTFNombre.getText();
+        descripcion = jTFNombre.getText();
+        
+        if(nombre.length() < 3) {
+            JOptionPane.showMessageDialog(this, "El nombre debe contener al menos 3 caracteres",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        try{
+            cantidad = Integer.parseInt(jTFCantidad.getText());
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(this, "La cantidad debe ser un numero",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        inventario = new Inventario(claveRopa, nombre, descripcion, cantidad);
+        
+        this.dispose();
     }//GEN-LAST:event_jBAceptarActionPerformed
 
+    public Inventario getInventario() {
+        this.setVisible(true);
+        return inventario;
+    }
+    
     /**
      * @param args the command line arguments
      */

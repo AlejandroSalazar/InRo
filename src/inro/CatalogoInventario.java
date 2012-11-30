@@ -4,6 +4,7 @@
  */
 package inro;
 
+import inro.modelos.Inventario;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -85,6 +86,11 @@ public class CatalogoInventario extends javax.swing.JInternalFrame {
         jBSalir.setFocusable(false);
         jBSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jBSalir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jBSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSalirActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jBSalir);
 
         jLBuscar.setText("Buscar:");
@@ -117,7 +123,7 @@ public class CatalogoInventario extends javax.swing.JInternalFrame {
                     .addComponent(jLBuscar)
                     .addComponent(jTBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -132,14 +138,29 @@ public class CatalogoInventario extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_formInternalFrameOpened
 
     private void jBAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarActionPerformed
-    DialogoInventario agrega = new DialogoInventario(null, true);
-        //BaseDeDatos bd = BaseDeDatos.getInstance();
-       
+        DialogoInventario dialogo = new DialogoInventario(null, true);
+        Inventario i = dialogo.getInventario();
+        
+        if(i != null) {
+            JOptionPane.showMessageDialog(this, "Registro aregado satisfactoriamente", 
+                "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jBAgregarActionPerformed
 
     private void jBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarActionPerformed
-        // TODO add your handling code here:
+        int r = JOptionPane.showConfirmDialog(this,
+            "¿Seguro que desea eliminar el registro?", "Confirmación",
+            JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+        
+        if(r == JOptionPane.YES_OPTION) {
+            JOptionPane.showMessageDialog(this, "Registro eliminado", 
+                    "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jBEliminarActionPerformed
+
+    private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jBSalirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAgregar;

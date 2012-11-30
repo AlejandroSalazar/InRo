@@ -1,6 +1,8 @@
 package inro;
 
+import inro.modelos.Departamento;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * To change this template, choose Tools | Templates
@@ -36,10 +38,27 @@ public class CatalogoDepartamentos extends javax.swing.JInternalFrame {
         jLBuscar = new javax.swing.JLabel();
         jTBuscar = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTRegistros = new javax.swing.JTable();
+        jTblRegistros = new javax.swing.JTable();
 
         setResizable(true);
         setTitle("Cátalago de Departamentos");
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
+            }
+        });
 
         jToolBar1.setRollover(true);
 
@@ -58,19 +77,29 @@ public class CatalogoDepartamentos extends javax.swing.JInternalFrame {
         jBEliminar.setFocusable(false);
         jBEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jBEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jBEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEliminarActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jBEliminar);
 
         jBSalir.setText("Salir");
         jBSalir.setFocusable(false);
         jBSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jBSalir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jBSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSalirActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jBSalir);
 
         jLBuscar.setText("Buscar:");
 
-        jTRegistros.setModel(new javax.swing.table.DefaultTableModel()
+        jTblRegistros.setModel(new javax.swing.table.DefaultTableModel()
             {public boolean isCellEditable(int row, int column){return false;}});
-        jScrollPane1.setViewportView(jTRegistros);
+        jScrollPane1.setViewportView(jTblRegistros);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,7 +125,7 @@ public class CatalogoDepartamentos extends javax.swing.JInternalFrame {
                     .addComponent(jLBuscar)
                     .addComponent(jTBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -104,11 +133,36 @@ public class CatalogoDepartamentos extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarActionPerformed
-        DialogoDepartamento agrega = new DialogoDepartamento(null, true);
-        //BaseDeDatos bd = BaseDeDatos.getInstance();
+        DialogoDepartamento dialogo = new DialogoDepartamento(null, true);
+        Departamento d = dialogo.getDepartamento();
         
-        // TODO add your handling code here:
+        if(d != null) {
+            JOptionPane.showMessageDialog(this, "Registro aregado satisfactoriamente", 
+                "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jBAgregarActionPerformed
+
+    private void jBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarActionPerformed
+        int r = JOptionPane.showConfirmDialog(this,
+            "¿Seguro que desea eliminar el registro?", "Confirmación",
+            JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+        
+        if(r == JOptionPane.YES_OPTION) {
+            JOptionPane.showMessageDialog(this, "Registro eliminado", 
+                    "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_jBEliminarActionPerformed
+
+    private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jBSalirActionPerformed
+
+    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+        String [] columns = {"Código", "Nombre"};
+        DefaultTableModel m = (DefaultTableModel) jTblRegistros.getModel();
+        m.setColumnIdentifiers(columns);
+        m.setRowCount(3);
+    }//GEN-LAST:event_formInternalFrameOpened
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAgregar;
@@ -117,7 +171,7 @@ public class CatalogoDepartamentos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLBuscar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTBuscar;
-    private javax.swing.JTable jTRegistros;
+    private javax.swing.JTable jTblRegistros;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }
