@@ -33,7 +33,9 @@ public class SistemaMain extends javax.swing.JFrame {
         jMIRopa = new javax.swing.JMenuItem();
         jMIPersonalHospital = new javax.swing.JMenuItem();
         jMIUsuarios = new javax.swing.JMenuItem();
+        jMIDepartamentos = new javax.swing.JMenuItem();
         jMSurtimentos = new javax.swing.JMenu();
+        jMIInventario = new javax.swing.JMenuItem();
         jMISurtirDeparamento = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,9 +74,25 @@ public class SistemaMain extends javax.swing.JFrame {
         });
         jMCatalogos.add(jMIUsuarios);
 
+        jMIDepartamentos.setText("Departamentos");
+        jMIDepartamentos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIDepartamentosActionPerformed(evt);
+            }
+        });
+        jMCatalogos.add(jMIDepartamentos);
+
         jMenuBar1.add(jMCatalogos);
 
         jMSurtimentos.setText("Surtimentos");
+
+        jMIInventario.setText("Inventario");
+        jMIInventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIInventarioActionPerformed(evt);
+            }
+        });
+        jMSurtimentos.add(jMIInventario);
 
         jMISurtirDeparamento.setText("Surtir deparamento");
         jMISurtirDeparamento.addActionListener(new java.awt.event.ActionListener() {
@@ -136,6 +154,18 @@ public class SistemaMain extends javax.swing.JFrame {
         s.show();
     }//GEN-LAST:event_jMISurtirDeparamentoActionPerformed
 
+    private void jMIInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIInventarioActionPerformed
+        CatalogoInventario c = new CatalogoInventario();
+        jDPContenedorEscritorio.add(c);
+        c.show();
+    }//GEN-LAST:event_jMIInventarioActionPerformed
+
+    private void jMIDepartamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIDepartamentosActionPerformed
+        CatalogoDepartamentos c = new CatalogoDepartamentos();
+        jDPContenedorEscritorio.add(c);
+        c.show();
+    }//GEN-LAST:event_jMIDepartamentosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -180,6 +210,8 @@ public class SistemaMain extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDPContenedorEscritorio;
     private javax.swing.JMenu jMCatalogos;
+    private javax.swing.JMenuItem jMIDepartamentos;
+    private javax.swing.JMenuItem jMIInventario;
     private javax.swing.JMenuItem jMIPersonalHospital;
     private javax.swing.JMenuItem jMIRopa;
     private javax.swing.JMenuItem jMISurtirDeparamento;
