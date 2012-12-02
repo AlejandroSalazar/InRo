@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package inro;
 
 /**
@@ -39,6 +35,10 @@ public class SistemaMain extends javax.swing.JFrame {
         jMISurtirDeparamento = new javax.swing.JMenuItem();
         jMIRecoleccion = new javax.swing.JMenuItem();
         jMINotasRemision = new javax.swing.JMenuItem();
+        jMReportes = new javax.swing.JMenu();
+        jMIReporteExistencia = new javax.swing.JMenuItem();
+        jMIReporteRopaPendiente = new javax.swing.JMenuItem();
+        jMIReporteSurtimiento = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -122,6 +122,34 @@ public class SistemaMain extends javax.swing.JFrame {
 
         jMenuBar1.add(jMSurtimentos);
 
+        jMReportes.setText("Reportes");
+
+        jMIReporteExistencia.setText("Reporte de Existencia");
+        jMIReporteExistencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIReporteExistenciaActionPerformed(evt);
+            }
+        });
+        jMReportes.add(jMIReporteExistencia);
+
+        jMIReporteRopaPendiente.setText("Reporte de Ropa Pendiente");
+        jMIReporteRopaPendiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIReporteRopaPendienteActionPerformed(evt);
+            }
+        });
+        jMReportes.add(jMIReporteRopaPendiente);
+
+        jMIReporteSurtimiento.setText("Reporte de Surtimiento");
+        jMIReporteSurtimiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIReporteSurtimientoActionPerformed(evt);
+            }
+        });
+        jMReportes.add(jMIReporteSurtimiento);
+
+        jMenuBar1.add(jMReportes);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -196,6 +224,24 @@ public class SistemaMain extends javax.swing.JFrame {
         r.show();
     }//GEN-LAST:event_jMINotasRemisionActionPerformed
 
+    private void jMIReporteExistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIReporteExistenciaActionPerformed
+        ReporteExistencia r = new ReporteExistencia();
+        jDPContenedorEscritorio.add(r);
+        r.show();
+    }//GEN-LAST:event_jMIReporteExistenciaActionPerformed
+
+    private void jMIReporteRopaPendienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIReporteRopaPendienteActionPerformed
+        ReporteRopaPendiente r = new ReporteRopaPendiente();
+        jDPContenedorEscritorio.add(r);
+        r.show();
+    }//GEN-LAST:event_jMIReporteRopaPendienteActionPerformed
+
+    private void jMIReporteSurtimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIReporteSurtimientoActionPerformed
+        ReporteSurtimiento r = new ReporteSurtimiento();
+        jDPContenedorEscritorio.add(r);
+        r.show();
+    }//GEN-LAST:event_jMIReporteSurtimientoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -245,9 +291,13 @@ public class SistemaMain extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMINotasRemision;
     private javax.swing.JMenuItem jMIPersonalHospital;
     private javax.swing.JMenuItem jMIRecoleccion;
+    private javax.swing.JMenuItem jMIReporteExistencia;
+    private javax.swing.JMenuItem jMIReporteRopaPendiente;
+    private javax.swing.JMenuItem jMIReporteSurtimiento;
     private javax.swing.JMenuItem jMIRopa;
     private javax.swing.JMenuItem jMISurtirDeparamento;
     private javax.swing.JMenuItem jMIUsuarios;
+    private javax.swing.JMenu jMReportes;
     private javax.swing.JMenu jMSurtimentos;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
