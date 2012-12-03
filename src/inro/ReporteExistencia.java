@@ -35,8 +35,16 @@ public class ReporteExistencia extends javax.swing.JInternalFrame {
 
         setTitle("Reporte de Existencia");
 
-        jTReporteExistencia.setModel(new javax.swing.table.DefaultTableModel()
-            {public boolean isCellEditable(int row, int column){return false;}});
+        jTReporteExistencia.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Tipo de ropa", "Cantidad"
+            }
+        ));
         jScrollPane1.setViewportView(jTReporteExistencia);
 
         jToolBar1.setRollover(true);
@@ -57,6 +65,11 @@ public class ReporteExistencia extends javax.swing.JInternalFrame {
         jBSalir.setFocusable(false);
         jBSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jBSalir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jBSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSalirActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jBSalir);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -73,13 +86,18 @@ public class ReporteExistencia extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jBSalirActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBGenerar;
     private javax.swing.JButton jBImprimir;

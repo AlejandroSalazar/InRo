@@ -46,6 +46,14 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMIDepartamentosActionPerformed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMIProveedores">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Proveedores"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMIProveedoresActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMSurtimentos">
@@ -123,6 +131,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="Sistema de Roper&#xed;a"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>

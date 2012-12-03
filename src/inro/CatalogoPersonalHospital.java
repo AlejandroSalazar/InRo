@@ -39,6 +39,7 @@ public class CatalogoPersonalHospital extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTblRegistros = new javax.swing.JTable();
 
+        setTitle("Personal de Hospital");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }

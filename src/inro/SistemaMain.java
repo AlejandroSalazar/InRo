@@ -30,6 +30,7 @@ public class SistemaMain extends javax.swing.JFrame {
         jMIPersonalHospital = new javax.swing.JMenuItem();
         jMIUsuarios = new javax.swing.JMenuItem();
         jMIDepartamentos = new javax.swing.JMenuItem();
+        jMIProveedores = new javax.swing.JMenuItem();
         jMSurtimentos = new javax.swing.JMenu();
         jMIInventario = new javax.swing.JMenuItem();
         jMISurtirDeparamento = new javax.swing.JMenuItem();
@@ -41,6 +42,7 @@ public class SistemaMain extends javax.swing.JFrame {
         jMIReporteSurtimiento = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema de Ropería");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -83,6 +85,14 @@ public class SistemaMain extends javax.swing.JFrame {
             }
         });
         jMCatalogos.add(jMIDepartamentos);
+
+        jMIProveedores.setText("Proveedores");
+        jMIProveedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIProveedoresActionPerformed(evt);
+            }
+        });
+        jMCatalogos.add(jMIProveedores);
 
         jMenuBar1.add(jMCatalogos);
 
@@ -242,6 +252,12 @@ public class SistemaMain extends javax.swing.JFrame {
         r.show();
     }//GEN-LAST:event_jMIReporteSurtimientoActionPerformed
 
+    private void jMIProveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIProveedoresActionPerformed
+        CatalogoProveedores r = new CatalogoProveedores();
+        jDPContenedorEscritorio.add(r);
+        r.show();        
+    }//GEN-LAST:event_jMIProveedoresActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -290,6 +306,7 @@ public class SistemaMain extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMIInventario;
     private javax.swing.JMenuItem jMINotasRemision;
     private javax.swing.JMenuItem jMIPersonalHospital;
+    private javax.swing.JMenuItem jMIProveedores;
     private javax.swing.JMenuItem jMIRecoleccion;
     private javax.swing.JMenuItem jMIReporteExistencia;
     private javax.swing.JMenuItem jMIReporteRopaPendiente;

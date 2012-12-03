@@ -33,9 +33,9 @@
                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jFormattedTextField2" min="-2" max="-2" attributes="0"/>
-                          <Component id="jFormattedTextField1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jFormattedTextField2" pref="172" max="32767" attributes="0"/>
+                          <Component id="jFormattedTextField1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -69,7 +69,7 @@
                   <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="384" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" pref="392" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -106,6 +106,9 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -115,9 +118,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jFormattedTextField1"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -125,9 +125,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jFormattedTextField2"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>

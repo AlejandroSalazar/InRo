@@ -50,6 +50,7 @@ public class DialogoPersonalHospital extends javax.swing.JDialog {
         jBAceptar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Personal de Hopital");
 
         jLabel1.setText("Nombre :");
 

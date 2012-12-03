@@ -59,15 +59,16 @@ public class ReporteSurtimiento extends javax.swing.JInternalFrame {
         jButton3.setFocusable(false);
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jButton3);
 
         jLabel1.setText("Fecha Inicial:");
 
-        jFormattedTextField1.setText("jFormattedTextField1");
-
         jLabel2.setText("Fecha Final:");
-
-        jFormattedTextField2.setText("jFormattedTextField2");
 
         jLabel3.setText("Tipo de Ropa:");
 
@@ -100,9 +101,9 @@ public class ReporteSurtimiento extends javax.swing.JInternalFrame {
                             .addComponent(jLabel1)
                             .addComponent(jLabel2))
                         .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jFormattedTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                            .addComponent(jFormattedTextField1))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
@@ -127,12 +128,17 @@ public class ReporteSurtimiento extends javax.swing.JInternalFrame {
                     .addComponent(jLabel3)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
