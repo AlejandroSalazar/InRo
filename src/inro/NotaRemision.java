@@ -64,13 +64,13 @@ public class NotaRemision extends javax.swing.JInternalFrame {
 
         jTHistorial.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Folio", "Fecha", "Proveedor"
             }
         ));
         jScrollPane1.setViewportView(jTHistorial);
@@ -114,7 +114,7 @@ public class NotaRemision extends javax.swing.JInternalFrame {
                     .addComponent(jBEliminar)
                     .addComponent(jBAgregar)
                     .addComponent(jBCerrar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Detalles de Nota de Remisión"));
@@ -153,13 +153,13 @@ public class NotaRemision extends javax.swing.JInternalFrame {
 
         jTLista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Tipo de Ropa", "Precio Unitario", "Cantidad"
             }
         ));
         jScrollPane2.setViewportView(jTLista);

@@ -31,6 +31,7 @@ public class SistemaMain extends javax.swing.JFrame {
         jMIUsuarios = new javax.swing.JMenuItem();
         jMIDepartamentos = new javax.swing.JMenuItem();
         jMIProveedores = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMSurtimentos = new javax.swing.JMenu();
         jMIInventario = new javax.swing.JMenuItem();
         jMISurtirDeparamento = new javax.swing.JMenuItem();
@@ -93,6 +94,14 @@ public class SistemaMain extends javax.swing.JFrame {
             }
         });
         jMCatalogos.add(jMIProveedores);
+
+        jMenuItem1.setText("Personal de Proveedor");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMCatalogos.add(jMenuItem1);
 
         jMenuBar1.add(jMCatalogos);
 
@@ -258,6 +267,12 @@ public class SistemaMain extends javax.swing.JFrame {
         r.show();        
     }//GEN-LAST:event_jMIProveedoresActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        CatalogoPersonalProveedor r = new CatalogoPersonalProveedor();
+        jDPContenedorEscritorio.add(r);
+        r.show();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -318,5 +333,6 @@ public class SistemaMain extends javax.swing.JFrame {
     private javax.swing.JMenu jMSurtimentos;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }
